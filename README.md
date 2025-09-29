@@ -7,3 +7,4 @@ NOTE I have no relation  or  affiliation to the local government in sf or the fi
 -----------
 Currently this project is in very early stages 
 ALSO I would recomend using tableau to explore the spatial part of this data 
+The goal is 
