@@ -14,6 +14,7 @@ from statsforecast import StatsForecast
 import datetime
 from statsmodels.tsa.seasonal import STL, seasonal_decompose
 import re
+from statsforecast.utils import ConformalIntervals
 from statsforecast.models import (
     HistoricAverage,
     Naive,
@@ -39,12 +40,22 @@ class engine:
         self.vf=valid_features
 
        
-    def train(self):
-        self.sf = StatsForecast(
-        models=self.models_selection,
-        freq=self.frequency,
-         n_jobs=-1,
-        )
+    def train(self,option):
+        if option==1:
+            self.sf = StatsForecast(
+            models=self.models_selection,
+            freq=self.frequency,
+            prediction_intervals=ConformalIntervals(n_windows=4, h=self.steps),
+             n_jobs=-1,
+            )
+        else:
+            
+            self.sf = StatsForecast(
+            models=self.models_selection,
+            freq=self.frequency,
+            n_jobs=-1,
+             )
+            
     def validation(self):
         self.cv_df=self.sf.cross_validation(
             df=self.data,

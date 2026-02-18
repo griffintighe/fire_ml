@@ -7,3 +7,8 @@ also be prepared for things to take some time when running the dataset is very l
 -----------
 Currently this project is in very early stages 
 ALSO I would recomend using tableau to explore the spatial part of this data 
+
+----
+the data comes from https://data.sfgov.org/Public-Safety/Map-of-Fire-Incidents/x93u-2mr2
+https://sf-fire.org/fire-station-locations
+and https://data.sfgov.org/City-Infrastructure/City-Facilities/nc68-ngbr/data_preview
